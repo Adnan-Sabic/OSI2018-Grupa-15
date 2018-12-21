@@ -8,17 +8,17 @@
 //Before using this class create an empty file "UserLog.txt"!!!
 class User
 {
-public:
 	int points = 0;
 	std::string username;
+	bool validUsername(std::string&);
+	bool hasSpecialChar(std::string const&);
 public:
 	User();
 	inline int getPoints() { return points; };
 	void setPoint(int);
 	inline std::string getUsername() { return username; };
 	inline void setUsername(std::string username) { this->username = username; };
-	bool validUsername(std::string&);
-	bool hasSpecialChar(std::string const&);
+	void printWelcomeMassage();
 	~User();
 };
 

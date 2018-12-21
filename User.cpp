@@ -22,6 +22,7 @@ User::User()
 		}
 		else
 		{
+			printWelcomeMassage();
 			std::string temp;
 			std::getline(inFile, temp);
 			points = std::stoi(temp);
@@ -58,6 +59,11 @@ bool User::validUsername(std::string& username)
 
 bool User::hasSpecialChar(std::string const &str) {
 	return std::find_if(str.begin(), str.end(), [](char ch) { return !(isalnum(ch) || ch == '_'); }) != str.end();
+}
+
+void User::printWelcomeMassage()
+{
+	std::cout << "Pozdrav " << username << std::endl;
 }
 
 User::~User()
