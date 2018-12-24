@@ -8,7 +8,7 @@
 //Before using this class create an empty file "UserLog.txt"!!!
 class User
 {
-	int points = 0;
+	int points = 10;
 	std::string username;
 	bool validUsername(std::string&);
 	bool hasSpecialChar(std::string const&);

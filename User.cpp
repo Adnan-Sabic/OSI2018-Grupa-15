@@ -12,7 +12,7 @@ User::User()
 		{
 			do {
 				std::cout << "Unesite vase korisnicko ime:" << std::endl;
-				std::cin >> username;
+				std::getline(std::cin, username);
 			} while (!validUsername(username));
 			inFile.close();
 			std::ofstream outFile;
@@ -58,7 +58,7 @@ bool User::validUsername(std::string& username)
 
 
 bool User::hasSpecialChar(std::string const &str) {
-	return std::find_if(str.begin(), str.end(), [](char ch) { return !(isalnum(ch) || ch == '_'); }) != str.end();
+	return std::find_if(str.begin(), str.end(), [](char ch) { return !(ch ==' ' || isalnum(ch) || ch == '_'); }) != str.end();
 }
 
 void User::printWelcomeMassage()
