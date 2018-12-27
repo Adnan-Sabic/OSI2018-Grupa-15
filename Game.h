@@ -1,31 +1,18 @@
 #pragma once
-#include <iostream>
-#include <ctime>
+#include "Statistic.h"
+//#include "Key.h"					/*TO DO*/
 
 class Game
 {
-	int credit;
-	//Key key; /*TO DO*/
-	//Statistic stats; /* TO DO*/
-
-	virtual void printTutorial(); //Ispis tutoriala
-								  //virtual Key getKey(); //Kad se napravi klasa Key
-								  //virtual int checkKey(Key key) //Kad se napravi klasa Key
-	virtual int checkCredit(); //Provjeri da li korisnik ima dovoljno kredita
-							   //virtual void enterKey(); //Unos kljuca
-
-							   /*Ovo se mozda moze i za svaku igricu posebno implementirati, ali ako ne bude trebalo izbrisacemo*/
-	virtual bool checkIfUserCanWin();
-	virtual double howMuchCanUserWin(); //procentualno
-
-
+	//Key key;						/*TO DO*/
+	Statistic statistic;
 public:
 	Game();
 	virtual ~Game();
-
-	virtual void playGame();  //Igranje igre
-	virtual void cancelGame(); //Otkazivanje igre
-	virtual void printStat(); //Ispis statistike
-	virtual void saveStat(); //Sacuvavanje statistike
-
+	virtual void playGame();	    //Igranje igre
+	virtual void cancelGame();		//Otkazivanje igre
+	virtual void printTutorial();	//Ispis tutoriala
+	void printStatistic();			//Ispis statistike
+protected:
+	virtual bool checkCredit();		//Provjeri da li korisnik ima dovoljno kredita
 };

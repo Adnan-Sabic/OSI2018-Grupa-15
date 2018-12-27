@@ -2,30 +2,16 @@
 
 
 
+Game::Game()
+{
+}
+
+
 void Game::printTutorial()
 {
 }
 
-int Game::checkCredit()
-{
-	return 0;
-}
-
-bool Game::checkIfUserCanWin()
-{
-	return false;
-}
-
-double Game::howMuchCanUserWin()
-{
-	return 0.0;
-}
-
-Game::Game() : credit(0)
-{
-}
-
-Game::~Game()
+bool Game::checkCredit()
 {
 }
 
@@ -37,12 +23,15 @@ void Game::cancelGame()
 {
 }
 
-void Game::printStat()
+void Game::printStatistic()
+{
+	statistic.printStatistic();
+}
+
+Game::~Game()
 {
 }
 
-void Game::saveStat()
-{
-}
+
 
 
