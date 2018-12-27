@@ -7,6 +7,8 @@ Statistic::Statistic()
 
 Statistic::Statistic(std::string fileName)
 {
+	std::fstream createFile(fileName, std::fstream::out | std::fstream::app);
+	createFile.close();
 	this->fileName = fileName;
 	std::ifstream file(fileName);
 	if (file.is_open())
@@ -23,13 +25,13 @@ Statistic::Statistic(std::string fileName)
 	}
 	else
 	{
-		std::cout << "File didn't open successfully" << std::endl; //Can be commented to disable this massage if there is no file with statistic name
+		std::cout << "File didn't open successfully" << std::endl;
 	}
 }
 
 void Statistic::addScore(int newScore)
 {
-	insterSortedToVector(newScore);
+	insertSortedToVector(newScore);
 	std::fstream file;
 	file.open(fileName, std::fstream::out);
 	if (file.is_open())
@@ -46,7 +48,7 @@ void Statistic::addScore(int newScore)
 	}
 }
 
-void Statistic::insterSortedToVector(int newScore)
+void Statistic::insertSortedToVector(int newScore)
 {
 	scoreArray.push_back(Score::Score(newScore));
 	int maximum;

@@ -6,13 +6,12 @@
 #include "Score.h"
 
 
-//Before using this class create an empty file with the name of the Score u want to keep Logged!!!
 class Statistic
 {
 	std::string fileName;
 	std::vector<Score> scoreArray;
 	int numberOfElements = 0;
-	void insterSortedToVector(int);
+	void insertSortedToVector(int);
 	void saveToCSVFile();
 public:
 	Statistic();
