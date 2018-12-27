@@ -15,7 +15,7 @@ bool Game::checkCredit()
 {
 }
 
-void Game::playGame()
+void Game::playGame(User& user)
 {
 }
 
