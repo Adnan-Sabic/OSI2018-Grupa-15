@@ -3,6 +3,8 @@
 
 User::User()
 {
+	std::fstream createFile("UserLog.txt", std::fstream::out | std::fstream::app);
+	createFile.close();
 	std::ifstream inFile;
 	inFile.open("UserLog.txt");
 	if (inFile.is_open())

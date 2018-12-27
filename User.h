@@ -5,7 +5,7 @@
 #include <cctype>
 #include <algorithm>
 
-//Before using this class create an empty file "UserLog.txt"!!!
+
 class User
 {
 	int points = 10;
