@@ -13,7 +13,9 @@ void Game::printTutorial()
 
 bool Game::checkCredit()
 {
+	return false;
 }
+
 
 void Game::playGame(User& user)
 {
