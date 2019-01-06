@@ -3,12 +3,13 @@
 #include <random>
 #include <ctime>
 #include "Statistic.h"
+#include "Game.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-class ThirdGame
+class ThirdGame : public Game
 {
 	int *numbers;
 	int n;
@@ -26,6 +27,8 @@ public:
 	void drawnNumbers();
 	~ThirdGame();
 	int compare(ThirdGame&) const; 
+	virtual void playGame(User& user) override;
+	virtual void printTutorial() override;
 private:
 	bool exists(int);
 	bool exists(int) const;

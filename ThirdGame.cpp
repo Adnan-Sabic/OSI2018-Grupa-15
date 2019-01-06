@@ -198,6 +198,36 @@ int ThirdGame::compare(ThirdGame &other) const
 	return pointsTemp;
 }
 
+void ThirdGame::playGame(User& user)
+{
+	printTutorial();
+	ThirdGame userNumbers, computerNumbers(20);
+	Statistic statistika("output.txt");
+	int points;
+
+	userNumbers.addNumbers();
+	cout << endl << "Izabrali ste sljedece brojeve: ";
+	userNumbers.print();
+
+
+	cout << "Izvlacenje lota je zavrsilo! Izvuceni su sljedeci brojevi: ";
+
+	computerNumbers.drawnNumbers();
+	points = userNumbers.compare(computerNumbers);
+
+	cout << "Broj bodova koji ste osvojili je: " << points;
+	statistika.addScore(points);
+	cout << endl;
+	statistika.printStatistic();
+}
+
+void ThirdGame::printTutorial()
+{
+	cout << endl;
+	cout << "Treba da unesete 7 razlicitih brojeva u opsegu od 1 do 45 nakon cega pocinje proces izvlacenja dobitnih brojeva. Racunar na slucajan nacin bira 20 brojeva. Za svaki pogodjeni broj dobijate (redni_broj_pogotka)*10 bodova (ako imate svih 7 pogodaka dobicete 10+20+30+40+50+60+70 bodova). Cijena igranja je 100 bodova.";
+	cout << endl;
+}
+
 
 ThirdGame::~ThirdGame()
 {
