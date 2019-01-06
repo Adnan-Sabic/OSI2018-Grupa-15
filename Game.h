@@ -5,6 +5,7 @@
 
 class Game
 {
+protected:
 	//Key key;								/*TO DO*/
 	Statistic statistic;
 public:

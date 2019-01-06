@@ -5,12 +5,14 @@
 ThirdGame::ThirdGame()
 {
 	numbers = new int[n = 7];
+	statistic = Statistic::Statistic("output.txt");
 }
 
 ThirdGame::ThirdGame(int i)
 {
 	numbers = new int[i];
 	n = i;
+	statistic = Statistic::Statistic("output.txt");
 }
 
 void ThirdGame::addNumbers()
@@ -202,13 +204,11 @@ void ThirdGame::playGame(User& user)
 {
 	printTutorial();
 	ThirdGame userNumbers, computerNumbers(20);
-	Statistic statistika("output.txt");
 	int points;
 
 	userNumbers.addNumbers();
 	cout << endl << "Izabrali ste sljedece brojeve: ";
 	userNumbers.print();
-
 
 	cout << "Izvlacenje lota je zavrsilo! Izvuceni su sljedeci brojevi: ";
 
@@ -216,9 +216,8 @@ void ThirdGame::playGame(User& user)
 	points = userNumbers.compare(computerNumbers);
 
 	cout << "Broj bodova koji ste osvojili je: " << points;
-	statistika.addScore(points);
+	statistic.addScore(points);
 	cout << endl;
-	statistika.printStatistic();
 }
 
 void ThirdGame::printTutorial()
