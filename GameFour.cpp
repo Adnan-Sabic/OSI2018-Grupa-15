@@ -4,24 +4,36 @@
 
 
 
-void GameFour::playGame()
+void GameFour::playGame(User& user)
 {
+	printTutorial();
+	int points = 0;
 	int fieldsOpened = 0;
 	while (1) {
 		printMineField();
 		int x, y;
-		std::cout << "Enter the coordinate < x >: ";
+		std::cout << "Unesi koordinatu < x >: ";
 		std::cin >> x;
-		std::cout << "Enter the coordinate < y >: ";
+		std::cout << "Unesite koordinatu < y >: ";
 		std::cin >> y;
 
+		if (visitedFields[x][y] || x > 4 || x<0 || y <0 || y>4)
+		{
+			std::cout << "Vec ste otvorili ovo polje ili su unesene koordinate neispravne!!" << std::endl;
+			continue;
+		}
 
 		system("cls");
-		std::cout << "You entered: ( x , y ) = " << "( " << x << ", " << y << " )" << std::endl;
+		std::cout << "Unijeli ste: ( x , y ) = " << "( " << x << ", " << y << " )" << std::endl;
 		if (mineField[x][y])
 		{
 			
-			std::cout << "You lost" << std::endl;
+			std::cout << "IZGUBILI STE !!" << std::endl << std::endl;
+			points = points - 30;
+			std::cout << "Osvojeni poeni: " << points << std::endl;
+			points = points + user.getPoints();
+			user.setPoint(points);
+			std::cout << "Na profilu: " <<user.getPoints() << std::endl; //izbrisi
 			gameOver();
 			getchar();
 			getchar();
@@ -30,13 +42,18 @@ void GameFour::playGame()
 		}
 		else
 		{
-			
+			points = points + 20;
+			std::cout << "Osvojeni poeni: " << points << std::endl;
 			visitedFields[x][y] = 1;
 			fieldsOpened++;
 		}
 		if (fieldsOpened == NUMBER_OF_MINES)
 		{
-			std::cout << "YOU WON!!!" << std::endl;
+			std::cout << "POBIJEDILI STE!!!" << std::endl;
+			std::cout << "Osvojili ste 300 poena" << std::endl;
+			points = points + user.getPoints();
+			user.setPoint(points);
+			std::cout << "Na profilu: " <<user.getPoints() << std::endl; //izbrisi
 			gameOver();
 			getchar();
 			getchar();
@@ -49,6 +66,7 @@ void GameFour::playGame()
 
 GameFour::GameFour() : points(0), numberOfMines(NUMBER_OF_MINES)
 {
+	statistic = Statistic::Statistic("StatisticLogGame4.txt");
 	std::mt19937 generator;
 	generator.seed(std::time(0));
 	std::uniform_int_distribution<uint32_t> number(0,4); //std::uniform_int_distribution<uint32_t> number(1, COLUMNS); isto je
@@ -61,6 +79,8 @@ GameFour::GameFour() : points(0), numberOfMines(NUMBER_OF_MINES)
 			mineField[i][j] = 0;
 			visitedFields[i][j] = 0;
 		}
+
+
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -97,7 +117,7 @@ void GameFour::printMineField()
 		for (int j = 0; j < COLUMNS; j++)
 		{
 			if (visitedFields[i][j])
-				std::cout << " ? ";
+				std::cout << " X ";
 			else
 				std::cout << " o ";
 		}
@@ -105,8 +125,15 @@ void GameFour::printMineField()
 	}
 }
 
+
+
 void GameFour::printTutorial()
 {
+	std::cout << "Ova igrica se sastoji u pronalazenju polja na kojima nema mina" << std::endl;
+	std::cout << "Polja su oznacena tako i tako" << std::endl;
+	std::cout << "Za svako polje na kojem nema mine dobijate +nesto" << std::endl;
+	std::cout << "U slucaju da otvorite polje na kome je mina gubite -toliko" << std::endl;
+	
 }
 
 char GameFour::fieldInfo(int info)
@@ -126,7 +153,9 @@ void GameFour::gameOver()
 		for (int j = 0; j < COLUMNS; j++)
 		{
 			if (mineField[i][j])
-				std::cout << " x ";
+				std::cout << " B ";
+			else if (visitedFields[i][j])
+				std::cout << " X ";
 			else
 				std::cout << " o ";
 		}

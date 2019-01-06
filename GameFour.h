@@ -6,7 +6,9 @@
 #include <ctime>
 #include <random>
 #include <Windows.h>
-class GameFour
+#include "Game.h"
+
+class GameFour : public Game
 {
 	int mineField[ROWS][COLUMNS]; //0 - Nema mine 1 - Ima mina
 	int visitedFields[ROWS][COLUMNS]; // 0 - neotvoreni 1 - otvoreni
@@ -14,14 +16,15 @@ class GameFour
 	int points;
 
 	void printMineField();
-	void printTutorial();
+	
 	char fieldInfo(int info);
 	void gameOver();
 
 public:
-	void playGame();
+	void playGame(User& user) override;
+	void printTutorial() override;
 	GameFour();
 	~GameFour();
-
+	//void cancelGame() override;
 };
 
