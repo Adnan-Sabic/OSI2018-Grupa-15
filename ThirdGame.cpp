@@ -204,7 +204,7 @@ void ThirdGame::playGame(User& user)
 {
 	printTutorial();
 	ThirdGame userNumbers, computerNumbers(20);
-	int points;
+	int points, newPoints;
 
 	userNumbers.addNumbers();
 	cout << endl << "Izabrali ste sljedece brojeve: ";
@@ -214,9 +214,12 @@ void ThirdGame::playGame(User& user)
 
 	computerNumbers.drawnNumbers();
 	points = userNumbers.compare(computerNumbers);
+	newPoints = user.getPoints() + points;
 
-	cout << "Broj bodova koji ste osvojili je: " << points;
-	statistic.addScore(points);
+	cout << "Broj bodova koji ste osvojili je: " << points << endl;
+	cout << "Ukupan broj bodova: " << newPoints;
+	
+	user.setPoint(newPoints);
 	cout << endl;
 }
 
