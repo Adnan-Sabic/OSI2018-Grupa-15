@@ -16,5 +16,5 @@ public:
 	virtual void printTutorial();			//Ispis tutoriala
 	void printStatistic();					//Ispis statistike
 protected:
-	virtual bool checkCredit();				//Provjeri da li korisnik ima dovoljno kredita
+	virtual bool checkCredit(User& user);				//Provjeri da li korisnik ima dovoljno kredita
 };

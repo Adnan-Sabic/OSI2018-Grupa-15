@@ -11,7 +11,7 @@ void Game::printTutorial()
 {
 }
 
-bool Game::checkCredit()
+bool Game::checkCredit(User& user)
 {
 	return false;
 }

@@ -1,126 +1,127 @@
-Jedan bajt sastoji se iz:
+Jedan bajt se sastoji iz?
 8 bita
 16 bita
 12 bita
 1
-Zbir uglova u trouglu je:
-90
-180
+Zbir uglova u trouglu?
+90 stepeni
+180 stepeni
 360 stepeni
 2
-Tvorac opste teorije o relativitetu je:
+Tvorac opste teorije o relativitetu?
 Robert Openhajmer
 Isak Njutn
 Albert Ajnstajn
 3
-Jedinica za otpor je:
+Jedinica za otpor?
 volt
 om
 amper
 2
-Koja recenica ima suvisnu rijec:
+Koja recenica ima suvisnu rijec?
 Skupljen uz drvo, cekao je da prestane kisa.
 Otisli su uskim Dobojskim putem.
 Pomislih u sebi da sam pogrijesila.
 3
-Olimpijske igre se odrzavaju svake:
+Olimpijske igre se odrzavaju svake ... godine?
 dvije
 tri
-cetiri godine
+cetiri
 3
 Koja od navedenih rijeci nije pravilno napisana?
-Focak
-uzicanin
+Foca
+kuzicanin
 dobojski
 2
-Kojim sportom se bavio Pit Sampras:
-tenisom
-biciklizmom
-atletikom
+Kojim sportom se bavio Pit Sampras?
+tenis
+kosarka
+atletika
 1
-Bazilika Svetog Petra u Rimu je djelo:
+Cije djelo je bazilika Sv.Petra u Rimu?
 Berninija
 Mikelandjela
 Dantea
 2
-Penicilin je lijek iz grupe:
-antidepresiva
-antibiotika
-analgetika
+Iz koje grupe je lijekova je penicilin?
+antidepresivi
+antibiotici
+analgetici
 2
-Trg Svetog Marka se nalazi u:
-Veroni
-Veneciji
-Nici
+Gdje se nalazi Trg Sv. Marka?
+Verona
+Venecija
+Nica
 2
-Najvisi pravni konstitutivni i politicki akt jedne zemlje je:
+Najvisi pravni konstituivni i politicki akt jedne zemlje?
 statut
 ustav
 pravilnik
 2
-Tihi okean se drugacije naziva:
+Tihi okean se drugacije naziva?
 Arktik
 Pacifik
 Atlantik
 2
-Najduza rijeka u Evropi je:
+Najduza rijeka u Evropi?
 Volga
 Dunav
 Temza
 1
-Gdje izvire rijeka Sava:
+Gdje izvire rijeka Sava?
 u Srbiji
 u Sloveniji
 u Madjarskoj
 2
-Duzina staze za maratonsku trku iznosi:
-42 km
-35 km
-32 km
+Duzina staze za maratonsku trku iznosi?
+42km
+35km
+32km
 1
-Kinologija je:
+Kinologija je?
 repertoar bioskopa
-repertorar pozorista
+repertoar pozorista
 nauka o psima
 3
-Nacional-socijalisticki pokret nastao je u:
-Njemackoj
-Austriji
-Italiji
+Gdje je nastao cacionalno-socijalisticki pokret?
+Njemacka
+Austrija
+Italija
 1
-Sintagma je:
+Sintagma je?
 vrsta recenice
 nauka o rijecima
 skup rijeci
 3
-Migel de Servantes je autor romana:
+Migel de Servantes je autor kojeg od navedenih romana?
 "Ana Karenjina"
 "Don Kihot"
 "Cica Gorio"
 2
 Koje godine i u kojem gradu su osnovane Ujedinjene nacije?
 1945. u San Francisku
-1945. u Los Andjelesu
+1945. u Los Endjelesu
 1954. u Briselu
 1
-Ustavom od 31.01.1946. konstituisana je:
+Ustavom od 31.01.1946. konstituisana je?
 DFJ
 FNRJ
 SFRJ
 2
-Oktobarska revolucije je bila:
+Koje godine je bila Oktobarska revolucija?
 1917.
 1916.
 1914.
 1
-Prvi predsjednik SAD-a bio je:
+Ko je bio prvi predsjednik SAD-a?
 Tomas Dzeferson
 Tomas Pen
-Dzordz Vasington
+Dzordz Vosingston
 3
-Eletricnu sijalicu izumio je:
-Dzems Vat
+Elektricnu sijalicu izumio je?
+Dzejms Vat
 Nikola Tesla
 Tomas Edison
 3
+
 
