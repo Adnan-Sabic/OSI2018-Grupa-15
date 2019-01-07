@@ -119,6 +119,7 @@ void GameTwo::playGame(User& user)
 	if (flag == 5)
 		points += 50;
 	std::cout << "Osvojeno bodova: " << points << std::endl;
+	statistic.addScore(points);
 	user.setPoint(points + user.getPoints());
 	std::cout << "Stanje na profilu: " << user.getPoints() << std::endl;
 }

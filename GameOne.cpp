@@ -148,7 +148,7 @@ void GameOne::playGame(User& user)
 			
 	}
 
-
+	statistic.addScore(points)
 	user.setPoint(user.getPoints() + points);
 
 	std::cout << "Stanje na profilu: " << user.getPoints() << std::endl;

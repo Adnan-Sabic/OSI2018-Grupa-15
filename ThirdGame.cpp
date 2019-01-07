@@ -5,14 +5,14 @@
 ThirdGame::ThirdGame()
 {
 	numbers = new int[n = 7];
-	statistic = Statistic::Statistic("output.txt");
+	statistic = Statistic::Statistic("StatisticLogGame3.txt");
 }
 
 ThirdGame::ThirdGame(int i)
 {
 	numbers = new int[i];
 	n = i;
-	statistic = Statistic::Statistic("output.txt");
+	statistic = Statistic::Statistic("StatisticLogGame3.txt");
 }
 
 void ThirdGame::addNumbers()
@@ -217,7 +217,8 @@ void ThirdGame::playGame(User& user)
 	newPoints = user.getPoints() + points;
 
 	cout << "Broj bodova koji ste osvojili je: " << points << endl;
-	cout << "Ukupan broj bodova: " << newPoints;
+	statistic.addScore(points);
+	cout << "Ukupan broj bodova na vasem korisnickom nalogu: " << newPoints;
 	
 	user.setPoint(newPoints);
 	cout << endl;
