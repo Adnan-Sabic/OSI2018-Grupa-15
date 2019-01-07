@@ -7,6 +7,13 @@
 void GameFour::playGame(User& user)
 {
 	printTutorial();
+
+
+	std::cout << "Pritisnite ENTER da bi nastavili dalje...";
+	getchar();
+
+	system("cls");
+
 	int points = 0;
 	int fieldsOpened = 0;
 	while (1) {
@@ -31,6 +38,7 @@ void GameFour::playGame(User& user)
 			std::cout << "IZGUBILI STE !!" << std::endl << std::endl;
 			points = points - 30;
 			std::cout << "Osvojeni poeni: " << points << std::endl;
+			statistic.addScore(points);
 			points = points + user.getPoints();
 			user.setPoint(points);
 			std::cout << "Na profilu: " <<user.getPoints() << std::endl; //izbrisi
@@ -51,6 +59,7 @@ void GameFour::playGame(User& user)
 		{
 			std::cout << "POBIJEDILI STE!!!" << std::endl;
 			std::cout << "Osvojili ste 300 poena" << std::endl;
+			statistic.addScore(300); //points = 300
 			points = points + user.getPoints();
 			user.setPoint(points);
 			std::cout << "Na profilu: " <<user.getPoints() << std::endl; //izbrisi
@@ -129,10 +138,10 @@ void GameFour::printMineField()
 
 void GameFour::printTutorial()
 {
-	std::cout << "Ova igrica se sastoji u pronalazenju polja na kojima nema mina" << std::endl;
-	std::cout << "Polja su oznacena tako i tako" << std::endl;
-	std::cout << "Za svako polje na kojem nema mine dobijate +nesto" << std::endl;
-	std::cout << "U slucaju da otvorite polje na kome je mina gubite -toliko" << std::endl;
+	std::cout << "Ova igrica se sastoji u pronalazenju polja na kojima nema mina" << std::endl
+			  << "Otvaranje polja se vrsi unosom koordinara ( x , y )" << std::endl
+			  << "Za svako polje na kojem nema mine dobijate 20 poena" << std::endl
+			  << "U slucaju da otvorite polje na kome je mina gubite 30 poena i tu se igra zavrsava." << std::endl;
 	
 }
 
