@@ -86,34 +86,40 @@ void GameTwo::playGame(User& user)
 
 	int flag = 0;
 	int points = 0;
-	for (int i = 0; i < 5; ++i)
+	int br = 0, j = 0, niz[5] = { 0 };
+	for (int i = 0; br != 5; ++i)
 	{
 		srand(time(NULL));
 		int temp = rand() % MAX;
-		std::cout << i+1 << ". ";
-		std::cout << arr[temp];
-		std::string a;
-		do
+		if (search(temp, 5, niz))
 		{
-			std::cout << "Unesite redni broj tacnog odgovora: ";
-			std::cin >> a;
-		} while (a != "1" && a != "2" && a != "3");
-		if (a == arr[temp].correct)
-		{
-			std::cout << "Tacan odgovor!\n" << std::endl;
-			flag++;
-			points += 20;
-			std::cout << "Poena osvojeno: " << points << std::endl;
-			Sleep(2000);
-			system("cls");
-		}
-		else
-		{
-			std::cout << "Netacan odgovor!\n" << std::endl;
-			points -= 30;
-			std::cout << "Poena osvojeno: " << points << std::endl;
-			Sleep(2000);
-			system("cls");
+			br++;
+			niz[j++] = temp;
+			std::cout << i + 1 << ". ";
+			std::cout << arr[temp];
+			std::string a;
+			do
+			{
+				std::cout << "Unesite redni broj tacnog odgovora: ";
+				std::cin >> a;
+			} while (a != "1" && a != "2" && a != "3");
+			if (a == arr[temp].correct)
+			{
+				std::cout << "Tacan odgovor!\n" << std::endl;
+				flag++;
+				points += 20;
+				std::cout << "Poena osvojeno: " << points << std::endl;
+				Sleep(2000);
+				system("cls");
+			}
+			else
+			{
+				std::cout << "Netacan odgovor!\n" << std::endl;
+				points -= 30;
+				std::cout << "Poena osvojeno: " << points << std::endl;
+				Sleep(2000);
+				system("cls");
+			}
 		}
 	}
 	if (flag == 5)
@@ -144,6 +150,15 @@ void GameTwo::readQuestions()
 	}
 	//getchar();
 }
+
+int GameTwo::search(int rb, int n, int *niz)
+{
+	for (int i = 0; i < n; ++i)
+		if (niz[i] == rb)
+			return 0; 
+	return 1;
+}
+
 std::ostream& operator<<(std::ostream& str, const question& q)
 {
 	str << q.text << std::endl;

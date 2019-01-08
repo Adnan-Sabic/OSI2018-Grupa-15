@@ -33,6 +33,7 @@ private:
 	void copy(const GameTwo&);
 	void move(GameTwo&&);
 	void readQuestions();
+	static int search(int, int, int*);
 
 
 	
