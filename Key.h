@@ -1,20 +1,31 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <string>
-#include <fstream>
 #include <iostream>
-#include <vector>
+#include <ctime>
+#include <random>
+#include <fstream>
+#include <limits>
+#include <chrono>
 
 
+using namespace std;
 
 class Key
 {
-	std::string key;
+	string key;
+
+	//Promjenjive koje ce cuvati podatke o datumu i vremenu
+	string date, timeT;
+
+
 public:
 	Key();
-	bool isValid(int) noexcept;
-	bool isExpired(int) noexcept;
-	friend std::istream& operator>> (std::istream&, Key&);
-private:
-	
+	Key(int game);
+	~Key();
+	inline string getKey() { return key; }
+
+	bool isValid(string inputKey);
+	bool isUnlocked(string word, string fileName);
 };
 
