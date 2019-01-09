@@ -5,7 +5,7 @@
 #include <ctime>
 #include <random>
 #include <fstream>
-#include <limits>
+#include <Windows.h>
 #include <chrono>
 
 
@@ -14,10 +14,13 @@ using namespace std;
 class Key
 {
 	string key;
-
+	bool permalocked;
+	//bool unlocked;
 	//Promjenjive koje ce cuvati podatke o datumu i vremenu
 	string date, timeT;
 
+	int duration;
+	string game;
 
 public:
 	Key();
@@ -27,5 +30,10 @@ public:
 
 	bool isValid(string inputKey);
 	bool isUnlocked(string word, string fileName);
+
+	void enterKey(string inputKey);
+	inline void permaLock() { permalocked = true;}
+	inline bool isPermaLocked() { return permalocked; }
+	inline void printKey() { std::cout << key << endl; }
 };
 

@@ -5,6 +5,7 @@
 
 GameTwo::GameTwo() : n(MAX), arr(new question[MAX])
 {
+	key = Key::Key(2);
 	statistic = Statistic::Statistic("StatisticLogGame2.txt");
 }
 
@@ -79,6 +80,7 @@ void GameTwo::playGame(User& user)
 
 	std::cout << "Pritistine ENTER da bi nastavili dalje...";
 	getchar();
+	getchar();
 
 	system("cls");
 
@@ -128,6 +130,12 @@ void GameTwo::playGame(User& user)
 	statistic.addScore(points);
 	user.setPoint(points + user.getPoints());
 	std::cout << "Stanje na profilu: " << user.getPoints() << std::endl;
+
+	std::cout << std::endl <<"Pritistine ENTER da bi ste nastavili dalje...";
+	getchar();
+	getchar();
+
+	system("cls");
 }
 
 void GameTwo::readQuestions()

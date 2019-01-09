@@ -27,6 +27,8 @@ void GameFour::playGame(User& user)
 		if (visitedFields[x][y] || x > 4 || x<0 || y <0 || y>4)
 		{
 			std::cout << "Vec ste otvorili ovo polje ili su unesene koordinate neispravne!!" << std::endl;
+			Sleep(1000);
+			system("cls");
 			continue;
 		}
 
@@ -76,6 +78,9 @@ void GameFour::playGame(User& user)
 GameFour::GameFour() : points(0), numberOfMines(NUMBER_OF_MINES)
 {
 	statistic = Statistic::Statistic("StatisticLogGame4.txt");
+	key = Key::Key(4);
+
+
 	std::mt19937 generator;
 	generator.seed(std::time(0));
 	std::uniform_int_distribution<uint32_t> number(0,4); //std::uniform_int_distribution<uint32_t> number(1, COLUMNS); isto je

@@ -25,6 +25,6 @@ public:
 	void printTutorial() override;
 	GameFour();
 	~GameFour();
-	//void cancelGame() override;
+
 };
 

@@ -93,7 +93,7 @@ void Statistic::printStatistic()
 	}
 	else
 	{
-
+		system("cls");
 	}
 }
 

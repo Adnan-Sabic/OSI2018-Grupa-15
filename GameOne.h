@@ -6,7 +6,7 @@
 #include <Windows.h>
 
 
-static int timesPlayed = 3;
+static int timesPlayed = 0;
 
 class GameOne : public Game
 {
@@ -20,7 +20,6 @@ public:
 	void printTutorial() override;
 	void playGame(User& user) override;
 
-	//void cancelGame() override;    /* TO DO */
 
 };
 

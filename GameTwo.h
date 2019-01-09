@@ -28,13 +28,10 @@ public:
 	bool checkCredit(User& user) override;
 	void printTutorial();
 	void playGame(User& user) override;
-	//void cancelGame() override; //todo
+	
 private:
 	void copy(const GameTwo&);
 	void move(GameTwo&&);
 	void readQuestions();
 	static int search(int, int, int*);
-
-
-	
 };

@@ -5,6 +5,7 @@
 GameOne::GameOne() : requiredNumber(0), isUnlocked(true), creditPut(0)
 {
 	statistic = Statistic::Statistic("StatisticLogGame1.txt");
+	key = Key::Key(1);
 }
 
 
@@ -36,6 +37,7 @@ void GameOne::playGame(User& user)
 	int points = 0;
 
 	std::cout << "Press ENTER to continue...";
+	getchar();
 	getchar();
 
 	system("cls");
@@ -148,7 +150,7 @@ void GameOne::playGame(User& user)
 			
 	}
 
-	statistic.addScore(points)
+	statistic.addScore(points);
 	user.setPoint(user.getPoints() + points);
 
 	std::cout << "Stanje na profilu: " << user.getPoints() << std::endl;
