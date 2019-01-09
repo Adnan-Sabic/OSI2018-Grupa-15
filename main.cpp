@@ -423,7 +423,7 @@ void rollCredits()
 	Sleep(400);
 	cout << "Drazena Vasiljevic" << endl;
 	Sleep(400);
-	cout << "Adrijana Malinovic		";
+	cout << "Andriana Malinovic		";
 	Sleep(400);
 	cout << "Djordje Kajganic" << endl;
 	Sleep(400);

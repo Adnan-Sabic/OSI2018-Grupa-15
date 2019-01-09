@@ -1,9 +1,6 @@
 #include "GameFour.h"
 
 
-
-
-
 void GameFour::playGame(User& user)
 {
 	printTutorial();
@@ -147,7 +144,7 @@ void GameFour::printMineField()
 void GameFour::printTutorial()
 {
 	std::cout << "Ova igrica se sastoji u pronalazenju polja na kojima nema mina" << std::endl
-			  << "Otvaranje polja se vrsi unosom koordinara ( x , y )" << std::endl
+			  << "Otvaranje polja se vrsi unosom koordinata ( x , y )" << std::endl
 			  << "Za svako polje na kojem nema mine dobijate 20 poena" << std::endl
 			  << "U slucaju da otvorite polje na kome je mina gubite 30 poena i tu se igra zavrsava." << std::endl;
 	
