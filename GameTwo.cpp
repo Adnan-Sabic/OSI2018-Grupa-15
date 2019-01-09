@@ -169,6 +169,3 @@ std::ostream& operator<<(std::ostream& str, const question& q)
 	return str;
 }
 
-
-
-
