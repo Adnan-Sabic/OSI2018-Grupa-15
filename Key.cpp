@@ -65,6 +65,12 @@ bool Key::isUnlocked(string word, string fileName)
 			if (line.find(word, 0) != string::npos) {
 				{
 					file >> temp >> tempDay >> tempMonth >> date >> timeT;
+					if (temp == "")
+					{
+						file.clear();
+						file.seekg(0, ios::beg);
+						file >> temp >> tempDay >> tempMonth >> date >> timeT;
+					}
 					fstream helpingFile;
 					helpingFile.open("helpMe.txt");
 					auto start = std::chrono::system_clock::now();
