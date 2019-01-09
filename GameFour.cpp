@@ -45,9 +45,6 @@ void GameFour::playGame(User& user)
 			user.setPoint(points);
 			std::cout << "Na profilu: " <<user.getPoints() << std::endl; //izbrisi
 			gameOver();
-			getchar();
-			getchar();
-			system("cls");
 			break;
 		}
 		else
@@ -66,13 +63,18 @@ void GameFour::playGame(User& user)
 			user.setPoint(points);
 			std::cout << "Na profilu: " <<user.getPoints() << std::endl; //izbrisi
 			gameOver();
-			getchar();
-			getchar();
 
 			break;
 		}
 	}
 	
+
+
+	std::cout << std::endl << "Pritistine ENTER da bi nastavili dalje...";
+	getchar();
+	getchar();
+	system("cls");
+	resetGame();
 }
 
 GameFour::GameFour() : points(0), numberOfMines(NUMBER_OF_MINES)
@@ -112,6 +114,7 @@ GameFour::GameFour() : points(0), numberOfMines(NUMBER_OF_MINES)
 		}
 		
 	}
+	
 }
 
 
@@ -174,5 +177,40 @@ void GameFour::gameOver()
 				std::cout << " o ";
 		}
 		std::cout << std::endl;
+	}
+}
+
+void GameFour::resetGame()
+{
+	std::mt19937 generator;
+	generator.seed(std::time(0));
+	std::uniform_int_distribution<uint32_t> number(0, 4); //std::uniform_int_distribution<uint32_t> number(1, COLUMNS); isto je
+
+	int row, col, k = 0;
+
+	for (int i = 0; i < ROWS; i++)
+		for (int j = 0; j < COLUMNS; j++)
+		{
+			mineField[i][j] = 0;
+			visitedFields[i][j] = 0;
+		}
+
+
+
+	for (int i = 0; i < 10; i++)
+	{
+		while (1)
+		{
+			col = number(generator);
+			row = number(generator);
+			if (mineField[row][col] != 0)
+				continue;
+			else
+			{
+				mineField[row][col] = 1;
+				break;
+			}
+		}
+
 	}
 }

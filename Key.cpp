@@ -60,20 +60,27 @@ bool Key::isUnlocked(string word, string fileName)
 	//cout << line;
 	if (file.is_open())
 	{
-		while (file >> temp >> tempDay >> tempMonth >> date >> timeT)
+		while (getline(file, line))
 		{
-			//file >> temp >> tempDay >> tempMonth >> date >> timeT;
-			fstream helpingFile;
-			//Sleep(100);
-			helpingFile.open("helpMe.txt");
-			auto start = std::chrono::system_clock::now();
-			std::time_t now_c = std::chrono::system_clock::to_time_t(start);
-			helpingFile << std::ctime(&now_c);
-			helpingFile >> tempDay >> tempMonth >> tempDate >> tempTime;
-			if ((date > tempDate) || (date == tempDate && timeT > tempTime))
-			{
-				helpingFile.close();
-				return true;
+			if (line.find(word, 0) != string::npos) {
+				{
+					file >> temp >> tempDay >> tempMonth >> date >> timeT;
+					fstream helpingFile;
+					helpingFile.open("helpMe.txt");
+					auto start = std::chrono::system_clock::now();
+					std::time_t now_c = std::chrono::system_clock::to_time_t(start);
+					helpingFile << std::ctime(&now_c);
+					helpingFile >> tempDay >> tempMonth >> tempDate >> tempTime;
+					if ((date > tempDate) || (date == tempDate && timeT > tempTime))
+					{
+						helpingFile.close();
+						return true;
+					}
+					else
+					{
+						continue;
+					}
+				}
 			}
 		}
 		return false;

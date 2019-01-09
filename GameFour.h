@@ -20,6 +20,7 @@ class GameFour : public Game
 	char fieldInfo(int info);
 	void gameOver();
 
+	void resetGame();
 public:
 	void playGame(User& user) override;
 	void printTutorial() override;
