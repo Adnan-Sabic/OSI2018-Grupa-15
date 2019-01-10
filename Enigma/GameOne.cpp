@@ -73,7 +73,7 @@ void GameOne::playGame(User& user)
 
 			if (userNumber < 1 || userNumber > 100)
 			{
-				std::cout << "Uneseni broj treba biti u intervalu [1,100]!!!" << std::endl << std::endl;
+				std::cout << "Uneseni broj treba biti u intervalu [1,100]( i treba biti broj)!!!" << std::endl << std::endl;
 			}
 			else if (userNumber == requiredNumber)
 			{
@@ -131,7 +131,7 @@ void GameOne::playGame(User& user)
 			userNumber = atoi(temp.c_str());
 			if (userNumber < 1 || userNumber > 100)
 			{
-				std::cout << "Uneseni broj treba biti u intervalu [1,100]!!!" << std::endl << std::endl;
+				std::cout << "Uneseni broj treba biti u intervalu [1,100](i treba biti BROJ)!!!" << std::endl << std::endl;
 			}
 			else
 			{
