@@ -13,9 +13,11 @@ Game::Game()
 		generator.seed(std::time(0));
 		std::uniform_int_distribution<uint32_t> number(0, 9);
 
-
-		std::fstream inFile;
-		inFile.open("keys.txt", ios::out | ios::in);
+		std::fstream createFile("keys.txt", std::fstream::out | std::fstream::app);
+		createFile.close();
+		
+		std::ofstream inFile;
+		inFile.open("keys.txt");
 		for (int i = 0; i < 4; i++)
 		{
 			inFile << "game" << i + 1<< " ";
