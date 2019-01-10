@@ -20,12 +20,18 @@ void GameThree::addNumbers()
 {
 	cout << endl << "Unesite 7 brojeva koji se nalaze u opsegu izmedju 1 i 45:" << endl;
 	int temp;
+
+	string errorCheck;
+
 	for (int i = 0; i < n; i++)
 	{
 		while (1)
 		{
 			cout << i + 1 << " broj:";
-			cin >> temp;
+			cin >> errorCheck;
+
+			temp = atoi(errorCheck.c_str());
+
 			if (exists(temp))
 			{
 				cout << endl << "Taj broj ste vec uzeli, molimo vas da izaberete neki drugi" << endl;
@@ -33,7 +39,7 @@ void GameThree::addNumbers()
 			}
 			if (temp < 1 || temp > 45)
 			{
-				cout << "Uneseni broj se ne nalazi trazenom opsegu! Molimo vas da pokusate ponovo." << endl;
+				cout << "Takav unos je nedozvoljen! Molimo vas da pokusate ponovo." << endl;
 				continue;
 			}
 			else
