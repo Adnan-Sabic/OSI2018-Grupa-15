@@ -83,7 +83,6 @@ void GameTwo::playGame(User& user)
 	if (!checkCredit(user, 50))
 		return;
 	
-	user.setPoint(user.getPoints() - 50);
 
 	printTutorial();
 

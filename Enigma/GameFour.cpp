@@ -13,7 +13,6 @@ void GameFour::playGame(User& user)
 	if (!checkCredit(user, 150))
 		return;
 	
-	user.setPoint(user.getPoints() - 150);
 
 	printTutorial();
 

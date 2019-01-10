@@ -60,7 +60,6 @@ void GameOne::playGame(User& user)
 	getchar();
 
 	system("cls");
-	cout << requiredNumber << endl;
 	if(timesPlayed >= 3)
 	{
 		while (attempts <= 5)

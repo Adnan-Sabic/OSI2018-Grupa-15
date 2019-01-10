@@ -1,13 +1,13 @@
-#include "Enigma.h"
+#include "MenuPrintFunctions.h"
 
 
 int main()
 {
-	printEnigma();
+	MenuPrintFunctions::printEnigma();
 
-	EnigmaApp();
+	MenuPrintFunctions::EnigmaApp();
 
-	rollCredits();
+	MenuPrintFunctions::rollCredits();
 
 	return 0;
 }
