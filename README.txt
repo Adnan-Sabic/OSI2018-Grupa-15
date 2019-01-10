@@ -1,1 +1,24 @@
-Pokrecite aplikaciju iz EnigmaMain.cpp zasad.
+*************************************************
+*		   ENIGMA			*
+*************************************************
+*						*
+*		School project			*
+*		Game platform			*
+*						*
+*						*
+*						*	
+*     "Osnovi softverskog inzinjerstva 2018"	*
+*						*
+*						*
+*   						*
+*						*
+*						*
+*           University of Banja Luka		*
+*      Faculty of Electrical Enineering		*
+*						*
+*		     2019			*
+*************************************************
+*		    ENIGMA			*
+*************************************************
+*		  HAVE FUN			*
+*************************************************
