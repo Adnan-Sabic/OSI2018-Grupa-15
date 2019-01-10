@@ -17,6 +17,12 @@ GameOne::GameOne() : requiredNumber(0), isUnlocked(true), creditPut(0)
 
 GameOne::~GameOne()
 {
+	GameOne::~GameOne()
+	{
+		flagFile.clear();
+		flagFile.seekg(0, ios::beg);
+		flagFile << 0;
+	}
 }
 
 void GameOne::printTutorial()
