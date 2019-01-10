@@ -19,6 +19,7 @@ void GameFour::playGame(User& user)
 
 	std::cout << "Pritisnite ENTER da bi nastavili dalje...";
 	getchar();
+	getchar();
 
 	system("cls");
 
