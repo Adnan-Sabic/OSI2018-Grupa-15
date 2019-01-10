@@ -54,6 +54,7 @@ void GameOne::playGame(User& user)
 	
 	int attempts = 1;
 	int userNumber;
+	std::string temp;
 	int points = 0;
 
 	std::cout << "Press ENTER to continue...";
@@ -67,7 +68,8 @@ void GameOne::playGame(User& user)
 		{
 			std::cout << "Ostalo vam je jos < " << 5 - attempts + 1 << " > pokusaja" << std::endl;
 			std::cout << "Unesite broj: ";
-			std::cin >> userNumber;
+			std::cin >> temp;
+			userNumber = atoi(temp.c_str());
 
 			if (userNumber < 1 || userNumber > 100)
 			{
@@ -125,7 +127,8 @@ void GameOne::playGame(User& user)
 		{
 			std::cout << "Ostalo vam je jos < " << 5 - attempts + 1 << " > pokusaja" << std::endl;
 			std::cout << "Unesite broj: ";
-			std::cin >> userNumber;
+			std::cin >> temp;
+			userNumber = atoi(temp.c_str());
 			if (userNumber < 1 || userNumber > 100)
 			{
 				std::cout << "Uneseni broj treba biti u intervalu [1,100]!!!" << std::endl << std::endl;
