@@ -34,7 +34,7 @@ Key::Key(int gameNumber) : permalocked(false)
 	else if (gameNumber == 3)
 		duration = 24;
 	else
-		duration = 200; // 0 umjesto beskonacno
+		duration = 10000; // 0 umjesto beskonacno
 
 
 	
@@ -54,7 +54,7 @@ bool Key::isValid(string inputKey)
 bool Key::isUnlocked(string word, string fileName)
 {
 	int oldpos = 0;
-	string tempDay, tempMonth, tempDate, tempTime;
+	string tempDay, tempMonth, tempDate, tempTime, tempYear;
 	string line, temp, lineTemp;
 	std::ifstream file;
 	file.open(fileName, std::fstream::out | std::fstream::app);
@@ -65,18 +65,18 @@ bool Key::isUnlocked(string word, string fileName)
 		{
 			if (line.find(word, 0) != string::npos) {
 				{
-					file >> temp >> tempDay >> tempMonth >> date >> timeT;
+					file >> temp >> tempDay >> tempMonth >> date >> timeT >> year;
 					if (temp == "")
 					{
 						file.clear();
 						file.seekg(0, ios::beg);
-						file >> temp >> tempDay >> tempMonth >> date >> timeT;
+						file >> temp >> tempDay >> tempMonth >> date >> timeT >> year;
 					}
 					if (temp != word)
 					{
 						file.clear();
 						file.seekg(oldpos);
-						file >> temp >> tempDay >> tempMonth >> date >> timeT;
+						file >> temp >> tempDay >> tempMonth >> date >> timeT >> year;
 					}
 					fstream helpingFile("helpMe.txt", std::fstream::out);
 					auto start = std::chrono::system_clock::now();
@@ -85,10 +85,10 @@ bool Key::isUnlocked(string word, string fileName)
 					helpingFile.close();
 					std::ifstream file2;
 					file2.open("helpMe.txt", std::fstream::out | std::fstream::app);
-					file2 >> tempDay >> tempMonth >> tempDate >> tempTime >> temp;
+					file2 >> tempDay >> tempMonth >> tempDate >> tempTime >> tempYear;
 					int dateHelp1 = stoi(date);
 					int dateHelp2 = stoi(tempDate);
-					if ((dateHelp1 > dateHelp2) || (dateHelp1 == dateHelp2 && timeT > tempTime))
+					if ((year > tempYear) || (year == tempYear && dateHelp1 > dateHelp2) || (year == tempYear && dateHelp1 == dateHelp2 && timeT > tempTime))
 					{
 						helpingFile.close();
 						return true;
@@ -139,4 +139,5 @@ void Key::enterKey(string inputKey)
 	}
 
 }
+
 
