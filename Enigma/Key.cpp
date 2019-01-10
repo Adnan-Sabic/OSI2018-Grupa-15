@@ -34,7 +34,7 @@ Key::Key(int gameNumber) : permalocked(false)
 	else if (gameNumber == 3)
 		duration = 24;
 	else
-		duration = 0; // 0 umjesto beskonacno
+		duration = 200; // 0 umjesto beskonacno
 
 
 	
@@ -53,6 +53,7 @@ bool Key::isValid(string inputKey)
 
 bool Key::isUnlocked(string word, string fileName)
 {
+	int oldpos = 0;
 	string tempDay, tempMonth, tempDate, tempTime;
 	string line, temp, lineTemp;
 	std::ifstream file;
@@ -71,13 +72,23 @@ bool Key::isUnlocked(string word, string fileName)
 						file.seekg(0, ios::beg);
 						file >> temp >> tempDay >> tempMonth >> date >> timeT;
 					}
-					fstream helpingFile;
-					helpingFile.open("helpMe.txt");
+					if (temp != word)
+					{
+						file.clear();
+						file.seekg(oldpos);
+						file >> temp >> tempDay >> tempMonth >> date >> timeT;
+					}
+					fstream helpingFile("helpMe.txt", std::fstream::out);
 					auto start = std::chrono::system_clock::now();
 					std::time_t now_c = std::chrono::system_clock::to_time_t(start);
-					helpingFile << std::ctime(&now_c);
-					helpingFile >> tempDay >> tempMonth >> tempDate >> tempTime;
-					if ((date > tempDate) || (date == tempDate && timeT > tempTime))
+					helpingFile << std::ctime(&now_c) << endl;
+					helpingFile.close();
+					std::ifstream file2;
+					file2.open("helpMe.txt", std::fstream::out | std::fstream::app);
+					file2 >> tempDay >> tempMonth >> tempDate >> tempTime >> temp;
+					int dateHelp1 = stoi(date);
+					int dateHelp2 = stoi(tempDate);
+					if ((dateHelp1 > dateHelp2) || (dateHelp1 == dateHelp2 && timeT > tempTime))
 					{
 						helpingFile.close();
 						return true;
@@ -88,6 +99,7 @@ bool Key::isUnlocked(string word, string fileName)
 					}
 				}
 			}
+			oldpos = file.tellg();
 		}
 		return false;
 	}
