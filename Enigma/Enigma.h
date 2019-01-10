@@ -9,8 +9,8 @@ using namespace std;
 
 void printEnigma();
 void printLine();
-void printStartMenu();
-void printGameMenu(string game);
+void printStartMenu(User user);
+void printGameMenu(User user, Game game, string gameNumber);
 void rollCredits();
 
 void EnigmaApp()
@@ -44,7 +44,7 @@ void EnigmaApp()
 
 	while (true)
 	{
-		printStartMenu();
+		printStartMenu(user);
 		cin >> choice;
 		system("cls");
 		if (choice == "1") //game1.unlocked ... i za ostale
@@ -55,7 +55,7 @@ void EnigmaApp()
 				{
 					while (true)
 					{
-						printGameMenu("JEDAN");
+						printGameMenu(user, game1, "JEDAN");
 						cin >> choice;
 						system("cls");
 						if (choice == "1")
@@ -127,7 +127,7 @@ void EnigmaApp()
 				{
 					while (true)
 					{
-						printGameMenu("DVA");
+						printGameMenu(user, game2, "DVA");
 						cin >> choice;
 						system("cls");
 						if (choice == "1")
@@ -199,7 +199,7 @@ void EnigmaApp()
 			{
 				while (true)
 				{
-					printGameMenu("TRI");
+					printGameMenu(user, game3, "TRI");
 					cin >> choice;
 					system("cls");
 					if (choice == "1")
@@ -271,7 +271,7 @@ void EnigmaApp()
 			{
 				while (true)
 				{
-					printGameMenu("CETIRI");
+					printGameMenu(user, game4, "CETIRI");
 					cin >> choice;
 					system("cls");
 					if (choice == "1")
@@ -367,7 +367,7 @@ void printLine()
 	cout << "====================================================================" << endl;
 }
 
-void printStartMenu()
+void printStartMenu(User user)
 {
 	printLine();
 	cout << "                          MENI                              " << endl;
@@ -379,13 +379,15 @@ void printStartMenu()
 		<< endl << "4 - Igra cetiri:	Majnsviper"
 		<< endl << "5 - Izlaz iz aplikacije" << endl;
 	printLine();
+	cout << "Trenutno poena:							 " << user.getPoints() << endl;
+	printLine();
 	cout << "Unesi: ";
 }
 
-void printGameMenu(string game)
+void printGameMenu(User user, Game game, string gameNumber)
 {
 	printLine();
-	cout << "                          MENI   IGRE  " << game << "             "<< endl;
+	cout << "                          MENI   IGRE  " << gameNumber << "             "<< endl;
 	printLine();
 
 
@@ -394,7 +396,7 @@ void printGameMenu(string game)
 		<< endl << "3 - Otkazivanje/zakljucavanje igre"
 		<< endl << "4 - Povratak na glavni meni"
 		<< endl;
-	printLine();
+	game.creditStatus(user);
 	cout << "Unesi: ";
 }
 

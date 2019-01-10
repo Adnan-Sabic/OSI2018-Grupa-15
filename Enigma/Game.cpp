@@ -61,7 +61,7 @@ bool Game::checkCredit(User& user, int minCredit)
 void Game::creditStatus(User & user)
 {
 	cout << "====================================================================" << endl;
-	cout << "Trenutno poena:											"<<user.getPoints() <<endl;
+	cout << "Trenutno poena:							 " << user.getPoints() << endl;
 	cout << "====================================================================" << endl;
 }
 
@@ -73,6 +73,9 @@ void Game::playGame(User& user)
 void Game::cancelGame()
 {
 	key.permaLock();
+	cout << "Zakljucali ste igru!!! Vise je ne mozete igrati do daljnjeg...";
+	Sleep(1500);
+	system("cls");
 }
 
 void Game::printStatistic()

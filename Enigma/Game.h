@@ -21,7 +21,8 @@ public:
 	virtual void printTutorial();			//Ispis tutoriala
 	void printStatistic();					//Ispis statistike
 	inline Key getKey() { return key; }
+	void creditStatus(User& user);
 protected:
 	bool checkCredit(User& user, int minCredit);		//Provjeri da li korisnik ima dovoljno kredita
-	void creditStatus(User& user);
+	
 };

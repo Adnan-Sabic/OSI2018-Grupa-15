@@ -73,6 +73,13 @@ void GameTwo::printTutorial()   // main
 
 void GameTwo::playGame(User& user)
 {
+	if (key.isPermaLocked())
+	{
+		cout << "Igrica je zakljucana i vise se ne moze igrati!!";
+		Sleep(1000);
+		system("cls");
+		return;
+	}
 	if (!checkCredit(user, 50))
 		return;
 	

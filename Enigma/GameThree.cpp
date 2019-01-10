@@ -206,6 +206,13 @@ int GameThree::compare(GameThree &other) const
 
 void GameThree::playGame(User& user)
 {
+	if (key.isPermaLocked())
+	{
+		cout << "Igrica je zakljucana i vise se ne moze igrati!!";
+		Sleep(1000);
+		system("cls");
+		return;
+	}
 	if (!checkCredit(user, 100))
 		return;
 
