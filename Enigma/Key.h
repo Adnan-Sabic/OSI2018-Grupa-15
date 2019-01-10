@@ -17,7 +17,7 @@ class Key
 	bool permalocked;
 	//bool unlocked;
 	//Promjenjive koje ce cuvati podatke o datumu i vremenu
-	string date, timeT;
+	string date, timeT, year;
 
 	int duration;
 	string game;
