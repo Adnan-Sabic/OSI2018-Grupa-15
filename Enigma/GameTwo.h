@@ -25,7 +25,6 @@ public:
 	GameTwo& operator=(const GameTwo&);
 	GameTwo& operator=(GameTwo&&);
 	~GameTwo();
-	bool checkCredit(User& user) override;
 	void printTutorial();
 	void playGame(User& user) override;
 	

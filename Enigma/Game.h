@@ -22,5 +22,6 @@ public:
 	void printStatistic();					//Ispis statistike
 	inline Key getKey() { return key; }
 protected:
-	virtual bool checkCredit(User& user);		//Provjeri da li korisnik ima dovoljno kredita
+	bool checkCredit(User& user, int minCredit);		//Provjeri da li korisnik ima dovoljno kredita
+	void creditStatus(User& user);
 };

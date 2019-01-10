@@ -7,22 +7,21 @@
 #include <Map>
 
 
-static int timesPlayed = 0;
+//static int timesPlayed = 0;
 
 class GameOne : public Game
 {
 	int requiredNumber;
 	int creditPut = 0;
 	bool isUnlocked = true;
-
-	bool isEntered(int* arr, int number);
+	int timesPlayed;
+	std::fstream flagFile;
 public:
 	GameOne();
 	~GameOne();
 
 	void printTutorial() override;
 	void playGame(User& user) override;
-
 
 };
 

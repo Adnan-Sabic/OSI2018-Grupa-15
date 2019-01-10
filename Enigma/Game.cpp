@@ -7,6 +7,7 @@ Game::Game()
 	constructorCalled++;
 	if (constructorCalled <= 1)
 	{
+		
 		int keySegment;
 		std::mt19937 generator;
 		generator.seed(std::time(0));
@@ -43,9 +44,25 @@ void Game::printTutorial()
 {
 }
 
-bool Game::checkCredit(User& user)
+bool Game::checkCredit(User& user, int minCredit)
 {
+	if (user.getPoints() >= minCredit) 
+	{
+		user.setPoint(user.getPoints() - minCredit);
+		return true;
+	}
+	cout << "Nemate dovoljno kredite < " << minCredit << " > na racunu!!"
+		<< endl << "Izbacice vas iz igre za 2 sekunde...";
+	Sleep(2000);
+	system("cls");
 	return false;
+}
+
+void Game::creditStatus(User & user)
+{
+	cout << "====================================================================" << endl;
+	cout << "Trenutno poena:											"<<user.getPoints() <<endl;
+	cout << "====================================================================" << endl;
 }
 
 

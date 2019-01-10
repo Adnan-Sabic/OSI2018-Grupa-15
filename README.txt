@@ -1,0 +1,1 @@
+Pokrecite aplikaciju iz EnigmaMain.cpp zasad.

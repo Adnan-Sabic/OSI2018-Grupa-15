@@ -61,10 +61,7 @@ GameTwo& GameTwo::operator=(GameTwo&& other)
 	return *this;
 }
 
-bool GameTwo::checkCredit(User& user)   //provjera u main-u
-{
-	return user.getPoints() >= 50;
-}
+
 
 void GameTwo::printTutorial()   // main
 {
@@ -76,6 +73,11 @@ void GameTwo::printTutorial()   // main
 
 void GameTwo::playGame(User& user)
 {
+	if (!checkCredit(user, 50))
+		return;
+	
+	user.setPoint(user.getPoints() - 50);
+
 	printTutorial();
 
 	std::cout << "Pritistine ENTER da bi nastavili dalje...";

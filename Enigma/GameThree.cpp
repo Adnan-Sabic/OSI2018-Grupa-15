@@ -206,6 +206,11 @@ int GameThree::compare(GameThree &other) const
 
 void GameThree::playGame(User& user)
 {
+	if (!checkCredit(user, 100))
+		return;
+
+	user.setPoint(user.getPoints() - 100);
+
 	printTutorial();
 	cout <<  endl <<"Pritisnite ENTER da bi nastavili dalje...";
 	getchar();
